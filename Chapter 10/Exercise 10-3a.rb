@@ -13,7 +13,7 @@ loop do
 end
 
 
-def sort(some_array)
+def shuffle(some_array)
     sorted_array = []
     recursive_sort(some_array, sorted_array)
     sorted_array
@@ -27,4 +27,4 @@ def recursive_sort(some_array, sorted_array)
 end
 
 
-print sort(word_list)
+print shuffle(word_list)

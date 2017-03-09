@@ -13,7 +13,7 @@ for i in (99).downto(0) #we start from 99 bottles down to no bottles
     less_one = i - 1 #the next number of bottles
   end
   puts ""
-  puts "#{num_of_bottles} bottles of beer on the wall, #{num_of_bottles} bottles of beer." #the default line to be printed, parsing in the variable of number of bottles
+  puts "#{num_of_bottles} bottles of beer on the wall, #{num_of_bottles} bottles of beer." #the default line to be printed, we want the number of bottles to vary
   puts "Take one down and pass it around, #{less_one} bottles of beer on the wall." if i != 0 #we will print a different line at the end when there are no bottles left
 end
   puts "Go to the store and buy some more, 99 bottles of beer on the wall."

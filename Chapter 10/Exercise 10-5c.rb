@@ -1,13 +1,11 @@
-#Expand upon englishNumber some more. 
-#Now put in millions, so you get 'one million' instead of 'one thousand thousand'. 
-#Then try adding billions and trillions. How high can you go?
+#"Ninety-nine bottles of beer..." Using englishNumber and your old program, 
+#write out the lyrics to this song the right way this time. 
+#Punish your computer: have it start at 9999.
 
-def english_number number
-if number < 0 # no neg numbers
-return 'Please enter a number that isn\'t negative'
-end
-if number == 0
-return 'zero'
+def english_number(number)
+
+if number <= 0
+return "No more" #we want to print "no more" bottles instead of "zero" bottles
 end
 
 # no more special cases, no more returns
@@ -130,19 +128,23 @@ end
 num_string
 end
 
-puts english_number( 0)
-puts english_number( 9)
-puts english_number( 10)
-puts english_number( 11)
-puts english_number( 17)
-puts english_number( 32)
-puts english_number( 88)
-puts english_number(101)
-puts english_number(7891)
-puts english_number(999_999)
-puts english_number(1000)
-puts english_number(10_345)
-puts english_number(100_567_899)
-puts english_number(999_999_999_999)
-puts english_number(20_100_026_705_003)
-puts english_number(1_000_000_000_000)
+
+
+for i in (9999).downto(0) #we start from 99 bottles down to no bottles
+  #when we are down to our last bottle
+  if i == 1 
+    num_of_bottles = 1
+    less_one = "no more" #we want to print "no more bottles on the wall" instead of "0 bottles on the wall"
+    
+  else
+    num_of_bottles = i #we want the number that counts down to be the number of bottles
+    less_one = i - 1 #the next number of bottles
+  end
+  puts ""
+  puts "#{english_number(num_of_bottles)} bottles of beer on the wall, #{english_number(num_of_bottles)} bottles of beer." 
+  #the default line to be printed, we want the number of bottles to vary.
+  puts "Take one down and pass it around, #{english_number(less_one.to_i)} bottles of beer on the wall." if i != 0
+  #we will print a different line at the end when there are no bottles left
+end
+  puts "Go to the store and buy some more, 9999 bottles of beer on the wall."
+  

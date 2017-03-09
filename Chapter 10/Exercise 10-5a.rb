@@ -30,7 +30,7 @@ if number > 9999  || (number % 1000 < 10) && (number.to_s.length == 4) #we only 
     left = number
     write = left/1000 #we write the first two digits as thousands
     left = left % 1000 if number > 9999 #we leave the last three digits to be written by hundreds and subsequently tens and ones
-    left = left % 10 if number.to_s.length == 4 #we leave the last one digit if it is a thousand and has ones only
+    left = left % 10 if number.to_s.length == 4 #we leave the last digit if it is a multiple of 1000 + 9 or less, eg. 3009
     
     thousands = englishNumber write #we write the first two digits
     numString = numString + thousands + ' thousand '
